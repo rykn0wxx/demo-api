@@ -14,7 +14,7 @@ module DemoApi
   class Application < Rails::Application
     config.load_defaults 6.0 and config.autoloader = :classic
     config.api_only = true
-    config.application_name = 'Demo API'
+    config.application_name = 'DemoAPI'
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')

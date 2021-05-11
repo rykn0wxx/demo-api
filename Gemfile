@@ -28,3 +28,6 @@ gem 'capistrano', '~> 3.16'
 gem 'capistrano-rails', '~> 1.6', '>= 1.6.1'
 gem 'capistrano-passenger', '~> 0.2.1'
 gem 'capistrano-rbenv', '~> 2.2'
+
+gem 'ed25519', '~> 1.2', '>= 1.2.4'
+gem 'bcrypt_pbkdf', '~> 1.1'

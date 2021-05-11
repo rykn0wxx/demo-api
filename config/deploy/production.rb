@@ -59,4 +59,11 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-server '35.247.106.80', user: 'root', roles: %w{app db web}
+set :ssh_options, {
+  user: "root",
+  keys: %w{/root/.ssh/google_compute_engine /root/.ssh/id_rsa},
+  forward_agent: false,
+  auth_methods: %w(publickey)
+}
+
+server '35.247.106.80', user: 'root', roles: %w{app db web}, ssh_options: { forward_agent: false, config: %(/root/sites/demo-api/.ssh/config) }
