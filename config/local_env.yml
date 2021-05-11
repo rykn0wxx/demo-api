@@ -1,0 +1,5 @@
+PORT: '3001'
+RUBYOPT: '--enable-frozen-string-literal'
+MYSQL_DB_USERNAME: 'devuser'
+MYSQL_DB_PASSWORD: 'Secure1234!'
+MYSQL_DB_SOCKET: '/var/run/mysqld/mysqld.sock'

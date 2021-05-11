@@ -1,0 +1,6 @@
+JWTSessions.token_store = :memory
+# JWTSessions.algorithm = 'HS256'
+JWTSessions.private_key = '40d890c94026e2a2d96a6662eec923654db95afc6bef8bc89aa88d6c7a2ab3d9ac2cca85dc2133d56bf78677e624edb1c11b49d6e0495f29db6c5838f0c6a03e'
+JWTSessions.encryption_key = '40d890c94026e2a2d96a6662eec923654db95afc6bef8bc89aa88d6c7a2ab3d9ac2cca85dc2133d56bf78677e624edb1c11b49d6e0495f29db6c5838f0c6a03e'
+JWTSessions.access_exp_time = 3600
+JWTSessions.refresh_exp_time = 43_200
