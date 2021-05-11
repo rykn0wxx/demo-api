@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['MYSQL_DB_USERNAME'] %>
+  password: <%= ENV['MYSQL_DB_PASSWORD'] %>
+  host: localhost
+  socket: <%= ENV['MYSQL_DB_SOCKET'] %>
+
+development:
+  <<: *default
+  database: mud_api_dev
+
+test:
+  <<: *default
+  database: mud_api_test
+
+production:
+  <<: *default
+  database: mud_api
