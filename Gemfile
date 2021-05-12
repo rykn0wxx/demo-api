@@ -14,6 +14,7 @@ gem 'acts_as_list'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 end
 
 group :development do
