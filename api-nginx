@@ -1,0 +1,6 @@
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  server_name www.r4ur1c1-io.tk r4ur1c1-io.tk;
+  return 301 https://r4ur1c1-io.tk$request_uri;
+}
