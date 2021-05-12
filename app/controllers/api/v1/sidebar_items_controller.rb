@@ -1,13 +1,11 @@
 module Api
   module V1
     class SidebarItemsController < ApplicationController
-      skip_before_action :verify_authenticity_token
 
-      # GET /sidebar_items
-      # GET /sidebar_items.json
+      # GET /api/v1/sidebar_items
+      # GET /api/v1/sidebar_items.json
       def index
-        @sidebar_items = {
-          data: [
+        @api_v1_sidebar_items = [
             {
               type: 'header',
               name: 'Main Navigation',
@@ -58,14 +56,12 @@ module Api
               ]
             }
           ]
-        }
-        # render json: { items: @sidebarData, status: :ok }, content_type: 'application/json', status: :ok
       end
 
       private
         def generate_rand_str
           rand(36**8).to_s(36) + "-" + rand(36**4).to_s(36) + "-" + rand(36**6).to_s(36)
         end
-    end
+    end 
   end
 end

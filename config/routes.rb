@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+#  namespace :api, defaults: {format: 'json'} do
+#    namespace :v1 do
+#      get 'sidebar_items/index'
+#    end
+#  end
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resources :sidebar_items, only: [:index]
-      # get 'sidebar', controller: :sidebar, action: :index
+      # resources :sidebar_items, only: [:index]
+      get 'sidebar_items', controller: :sidebar_items, action: :index
     end
   end
   root to: 'home#index', defaults: { format: 'json' }
