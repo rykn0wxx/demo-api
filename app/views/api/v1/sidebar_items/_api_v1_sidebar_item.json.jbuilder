@@ -1,1 +1,1 @@
-json.extract! api_v1_sidebar_item
+json.array! api_v1_sidebar_item

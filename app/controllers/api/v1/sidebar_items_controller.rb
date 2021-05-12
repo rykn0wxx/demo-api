@@ -56,6 +56,7 @@ module Api
               ]
             }
           ]
+        render json: { data: @api_v1_sidebar_items, status: :ok }, content_type: 'application/json', status: :ok
       end
 
       private
