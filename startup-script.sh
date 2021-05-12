@@ -4,6 +4,9 @@
 
 ngayon=$(date)
 
+rm -rf /var/log/r4ur1c1-io-tk-out.log
+rm -rf /var/log/r4ur1c1-io-tk-err.log
+
 cat << EOF > /etc/nginx/sites-available/r4ur1c1-io-tk
 server {
   listen 80 default_server;
@@ -22,7 +25,7 @@ systemctl restart nginx
 cat > /etc/supervisor/conf.d/r4ur1c1-io-tk.conf << EOF
 [program:r4ur1c1-io-tk]
 directory=/root/sites/demo-api
-command=bash -lc "/root/.rbenv/shims/bundle exec /root/.rbenv/shims/rails server"
+command=bash -lc "/root/.rbenv/shims/bundle exec /root/.rbenv/shims/rails server -e production -b 0.0.0.0 -p 3001"
 autostart=true
 autorestart=true
 stdout_logfile=/var/log/r4ur1c1-io-tk-out.log
@@ -33,8 +36,7 @@ user=root
 ;ngayon
 EOF
 
-cat /etc/supervisor/conf.d/r4ur1c1-io-tk.conf |
-  sed -i "s|ngaun|${ngaun}|g"
+sed -i "s|ngayon|${ngayon}|g" /etc/supervisor/conf.d/r4ur1c1-io-tk.conf
 
 supervisorctl reread
 supervisorctl update
